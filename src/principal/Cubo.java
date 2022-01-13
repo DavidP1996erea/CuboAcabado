@@ -14,6 +14,11 @@ public class Cubo {
     // Constructor predeterminado
     public Cubo(){
 
+        this.material="plastico";
+        this.asa=false;
+        this.color="negro";
+        this.capacidadMaxima=10;
+        this.contenidoActual=5;
     }
 
 
@@ -33,7 +38,7 @@ public class Cubo {
     public Cubo(Cubo cubo){
 
         this.material=cubo.getMaterial();
-        this.asa=isAsa();
+        this.asa=cubo.isAsa();
         this.color= cubo.getColor();
         this.capacidadMaxima=cubo.getCapacidadMaxima();
         this.contenidoActual= cubo.getContenidoActual();
@@ -73,6 +78,11 @@ public class Cubo {
         }
     }
 
+    /**
+     *
+     * @param cuboDestino
+     * @param litros
+     */
 
     // Método volcar
     public void volcar( Cubo cuboDestino, int litros){
@@ -83,16 +93,42 @@ public class Cubo {
         }else {
 
             System.out.println("Si caben");
-            cuboDestino.contenidoActual=cuboDestino.contenidoActual+litros;
+            int cont = cuboDestino.getContenidoActual();
+            cuboDestino.contenidoActual = cuboDestino.getContenidoActual() + litros;
 
             contenidoActual=contenidoActual-litros;
 
         }
-
-
     }
 
 
+
+    // Método crear cubo
+
+    public void cubito() {
+
+
+        for (int i = 0; i < capacidadMaxima; i++) {
+
+            System.out.println("");
+
+            for (int j = 0; j < capacidadMaxima; j++) {
+
+                if(j==1 || j == capacidadMaxima-1 && i!=capacidadMaxima-1) {
+                    System.out.print(" * ");
+                }else if(i==capacidadMaxima-1 && j!=0) {
+                    System.out.print(" * ");
+                }else if (j!=0){
+                    System.out.print("   ");
+                }
+
+            }
+
+
+
+
+        }
+    }
     // Métodos get y set
 
 
@@ -133,6 +169,8 @@ public class Cubo {
     }
 
     public void setContenidoActual(int contenidoActual) {
-        this.contenidoActual = contenidoActual;
+        if(contenidoActual<=getCapacidadMaxima()) {
+            this.contenidoActual = contenidoActual;
+        }
     }
 }

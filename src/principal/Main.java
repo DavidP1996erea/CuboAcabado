@@ -42,12 +42,15 @@ public class Main {
         int contenidoActual;
 
 
-        Cubo cubo1 = new Cubo("plastico", false, "negro", 10, 0);
+
+        Cubo cubo1 = new Cubo();
 
         Cubo cuboCopia= new Cubo(cubo1);
 
         Cubo cubo2 = new Cubo();
-
+/*
+        System.out.println("CUBO 5 " + cubo1.getContenidoActual());
+        System.out.println(cubo1.getColor());
 
         System.out.println("Introduzca el material");
         material=sc.nextLine();
@@ -74,9 +77,10 @@ public class Main {
 
         System.out.println("cubo 2 tiene " + cubo2.getContenidoActual());
 
-        cubo2.llenar(50);
+        cubo1.llenar(50);
 
-        System.out.println("cubo 2 tiene tras llenarlo " + cubo2.getContenidoActual());
+        System.out.println("cubo 1 tiene tras llenarlo " + cubo1.getContenidoActual());
+
 
 
         cubo2.vaciar(40);
@@ -90,6 +94,9 @@ public class Main {
         System.out.println("comrpobar litros del que se vcacia " + cubo2.getContenidoActual());
 
 
+ */
+
+        cubo2.cubito();
 
 
 
